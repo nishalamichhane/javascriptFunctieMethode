@@ -43,13 +43,15 @@ console.log(domainname);
 // Schrijf een functie genaamd typeOfEmail, die een emailadres verwacht. De functie checkt of het emailadres een novi domein heeft (medewerker), een novi-education domein (student), of extern domein (zoals gmail of outlook)
 const domaintype = {
     typeOfEmail: function() {
-        if(this.emailaddress == "n.eeken@novi-education.nl"){
+        if(this.emailaddress.substring(this.emailaddress.indexOf('@') + 1) === "novi-education.nl" )
+        {
             return "Student";
         }
-        else if(this.emailaddress == "t.mellink@novi.nl"){
+        else if(this.emailaddress.substring(this.emailaddress.indexOf('@') + 1) === "novi.nl" )
+        {
             return "Medewerker";
         }
-        else if(this.emailaddress == "novi.nlaapjesk@outlook.com"){
+        else{
             return "Extern";
         }
     }
