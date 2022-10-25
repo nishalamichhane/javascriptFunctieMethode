@@ -75,9 +75,8 @@ console.log(emailtype);
 
 const checkEmail = {
     checkEmailValidity: function() {
-        const regex_pattern = /(.+)@(.+){2,}\.(.+){2,}/;
-
-        if (regex_pattern.emailaddress2) {
+       const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+       if(this.emailaddress2.match(mailFormat)) {
             return true;
         }
         else {
@@ -86,9 +85,8 @@ const checkEmail = {
 
     }
 }
-
 const emailaddress2 = {
-    emailaddress2:"nisha@nisha.com"
+    emailaddress2:"n.eeken@novi.nl"
 }
 const emailValidity = checkEmail.checkEmailValidity.call(emailaddress2);
 console.log(emailValidity);
